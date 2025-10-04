@@ -1,9 +1,53 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import './reviewsslider.css';
+import './ReviewsSlider.css';
 
 const AUTOPLAY_INTERVAL = 5000;
 
-// ⭐ Star Generation Function (Moved into the component or a utility)
+const reviewItems = [
+  {
+    "title": "Fast and Reliable",
+    "text": "DelishBite never disappoints! The food is always fresh and flavorful. Highly recommend the Pepperoni Pizza.",
+    "name": "john deo",
+    "location": "New York, NY",
+    "image": "https://randomuser.me/api/portraits/men/1.jpg",
+    "rating": 4.5
+  },
+  {
+    "title": "Amazing Taste",
+    "text": "The burgers are absolutely delicious! Juicy patties and fresh ingredients make this my go-to spot.",
+    "name": "sarah smith",
+    "location": "Los Angeles, CA",
+    "image": "https://randomuser.me/api/portraits/women/2.jpg",
+    "rating": 4.5
+  },
+  {
+    "title": "Great Service",
+    "text": "Delivery was quick and food arrived hot. Customer service was excellent when I had a question.",
+    "name": "mike johnson",
+    "location": "Chicago, IL",
+    "image": "https://randomuser.me/api/portraits/men/8.jpg",
+    "rating": 4.5
+  },
+  {
+    "title": "Best in Town",
+    "text": "I've tried many food delivery services, but DelishBite stands out with their quality and consistency.",
+    "name": "emily davis",
+    "location": "Miami, FL",
+    "image": "https://randomuser.me/api/portraits/women/12.jpg",
+    "rating": 4.5
+  },
+  {
+    "title": "Always Fresh",
+    "text": "The ingredients taste so fresh! You can tell they use high-quality products in all their dishes.",
+    "name": "david wilson",
+    "location": "Seattle, WA",
+    "image": "https://randomuser.me/api/portraits/men/6.jpg",
+    "rating": 4.5
+  }
+];
+
+
+// ⭐ Star Generation Function
 const generateStars = (rating) => {
   const fullStars = Math.floor(rating);
   const halfStar = rating % 1 >= 0.5;
@@ -22,9 +66,9 @@ const generateStars = (rating) => {
 };
 
 const ReviewsSlider = () => {
-  const [reviewsData, setReviewsData] = useState([]);
+  // 2. Initialize state directly with local data, removing loading state
+  const [reviewsData] = useState(reviewItems); 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [loading, setLoading] = useState(true);
 
   // Refs to access the DOM elements for measurements
   const sliderRef = useRef(null);
@@ -32,56 +76,41 @@ const ReviewsSlider = () => {
 
   const totalSlides = reviewsData.length;
 
-  // --- 1. Data Fetching (Replaces fetch in DOMContentLoaded) ---
-  useEffect(() => {
-    fetch("../../../reviews.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setReviewsData(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error loading reviews data:", error);
-        setLoading(false);
-      });
-  }, []);
+  // --- Data Fetching (REMOVED - data is now local) ---
+  /* useEffect(() => {
+    // ... removed fetch call ...
+  }, []); 
+  */
 
-  // --- Core Slider Logic (Replaces the updateSlider function) ---
+
+  // --- Core Slider Logic (Remains the same) ---
   const updateSlider = useCallback(() => {
     if (totalSlides === 0 || !sliderRef.current || !containerRef.current) return;
 
-    // We must find the slide width dynamically, using a child element
     const slides = Array.from(sliderRef.current.children);
     if (slides.length === 0) return;
     
-    // Get the first slide's dimensions to determine all slide sizes (assuming uniform width)
     const currentSlide = slides[currentIndex]; 
-    if (!currentSlide) return; // Safety check
+    if (!currentSlide) return;
 
     let offset = 0;
-    
-    // Find computed style for margin/gap (assuming 30px from your original logic)
-    // In a real project, you'd pull this from a CSS variable if possible.
     const slideGap = 30; 
 
     if (window.innerWidth > 768) {
       const containerWidth = containerRef.current.offsetWidth;
       const slideWidth = currentSlide.offsetWidth + slideGap;
       
-      // Calculation for centering the active slide
       offset = (containerWidth / 2) - (slideWidth / 2) - (currentIndex * slideWidth);
     } else {
       const slideWidth = currentSlide.offsetWidth;
-      // Calculation for left-aligning (mobile)
-      offset = -(currentIndex * (slideWidth + 20)); // Assuming 20px gap on mobile
+      offset = -(currentIndex * (slideWidth + 20)); 
     }
 
-    // Apply the transformation
     sliderRef.current.style.transform = `translateX(${offset}px)`;
 
   }, [currentIndex, totalSlides]);
 
-  // --- Navigation Handlers (Replaces handleNext/handlePrev) ---
+  // --- Navigation Handlers (Remains the same) ---
   const handleNext = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
   }, [totalSlides]);
@@ -91,43 +120,41 @@ const ReviewsSlider = () => {
   }, [totalSlides]);
 
 
-  // --- 2. Update Slider on Index or Data Change ---
-  // Runs updateSlider whenever the active index changes or data loads
+  // --- Update Slider on Index or Data Change (Remains the same) ---
   useEffect(() => {
-    // We update the transform style directly here
-    updateSlider();
+    if (totalSlides > 0) { // Only run if data is loaded
+      updateSlider();
+    }
   }, [currentIndex, updateSlider, totalSlides]); 
   
-  // --- 3. Autoplay Timer (Replaces startAutoplay) ---
+  // --- Autoplay Timer (Remains the same) ---
   useEffect(() => {
+    if (totalSlides === 0) return; // Prevent interval if no data
     let autoplayInterval = setInterval(handleNext, AUTOPLAY_INTERVAL);
     
-    // Cleanup function: clears the interval when the component unmounts or state changes
     return () => clearInterval(autoplayInterval);
-  }, [handleNext]); 
+  }, [handleNext, totalSlides]); 
 
-  // --- 4. Window Resize Listener (Replaces window.addEventListener("resize")) ---
+  // --- Window Resize Listener (Remains the same) ---
   useEffect(() => {
     window.addEventListener("resize", updateSlider);
-
-    // Cleanup function: removes the listener when the component unmounts
     return () => window.removeEventListener("resize", updateSlider);
   }, [updateSlider]); 
 
 
   // --- Render Functions ---
-  if (loading) {
+  // We can simplify the loading block since loading is instant
+  if (totalSlides === 0) {
     return (
       <section className="reviews-section">
         <div className="container">
-          <p>Loading customer reviews...</p>
+          <p>No reviews available at this time.</p>
         </div>
       </section>
     );
   }
 
   const ReviewSlide = ({ review, index }) => (
-    // Use an index-specific class for the CSS 'slide' selector
     <div 
       className={`slide slide${index} review-reveal ${index === currentIndex ? "active" : ""}`}
     >
@@ -153,7 +180,7 @@ const ReviewsSlider = () => {
   return (
     <section className="reviews-section">
       <div className="container services-header text-view">
-        <h2>Customer Reviews</h2> {/* Assuming this section is for reviews */}
+        <h2>Customer Reviews</h2>
         <p>What our guests are saying about their experience.</p>
       </div>
       
