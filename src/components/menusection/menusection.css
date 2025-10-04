@@ -1,0 +1,13 @@
+/* Add this rule to your CSS file */
+.secondary-btn:focus,
+.secondary-btn:active {
+    /* Prevents the browser's default blue focus outline from appearing. */
+    outline: none; 
+    
+    /* Ensure the border color stays consistent if the browser was trying to override it */
+    border-color: #ff9c12; 
+}
+
+.secondary-btn:hover {
+    border-color: #ff9c12; /* Ensure hover state is consistent */
+}

@@ -1,0 +1,24 @@
+.logo-fill {
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  position: relative;
+  display: inline-block; 
+  color: transparent;
+  -webkit-text-stroke: 1px #f39c12;
+  text-stroke: 1px #f39c12;
+  background-image: radial-gradient(circle at center, #f39c12 0%, #f39c12 100%);
+  background-repeat: no-repeat;
+  background-size: 0% 0%; 
+  background-position: center center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: background-size 0.5s ease-out;
+}
+
+
+.logo-fill:hover {
+  background-size: 100% 100%;
+  -webkit-text-stroke-color: #f39c12;
+  text-stroke-color: currentColor;
+}

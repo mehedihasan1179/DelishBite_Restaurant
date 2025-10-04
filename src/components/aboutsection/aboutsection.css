@@ -1,0 +1,14 @@
+
+.primary-btn {
+  position: relative;
+  overflow: hidden;
+  --x-pos: 0px;
+  --y-pos: 0px; 
+}
+
+.primary-btn::after {
+  content: "";
+  position: absolute;
+  left: var(--x-pos); 
+  top: var(--y-pos);
+}

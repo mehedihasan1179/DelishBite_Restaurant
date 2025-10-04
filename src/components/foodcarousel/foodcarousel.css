@@ -1,0 +1,429 @@
+
+.primary-btn {
+  position: relative;
+  overflow: hidden;
+  --x-pos: 0px;
+  --y-pos: 0px; 
+}
+
+.primary-btn::after {
+  content: "";
+  position: absolute;
+  left: var(--x-pos); 
+  top: var(--y-pos);
+}
+
+
+:root {
+  --border-color: #fff5;
+  --w-image: 500px;
+  --calculate: calc(3 / 2);
+  --navbar-height: 70px;
+}
+
+.carousel {
+  margin-top: var(--navbar-height);
+  width: 100%;
+  height: 100vh; /* Change to 100vh */
+  overflow: hidden;
+  z-index: 0;
+  position: relative;
+}
+
+.carousel .list {
+  height: 100%; /* This should be 100% of parent */
+  position: relative;
+}
+
+.carousel .list::before {
+  position: absolute;
+  width: var(--w-image);
+  height: 100%; /* Changed from 100vh to 100% */
+  content: "";
+  top: 0;
+  left: calc(100% - calc(var(--w-image) * var(--calculate)));
+  z-index: 10;
+  pointer-events: none;
+}
+
+
+.carousel .list::after {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  content: "";
+  background-color: #e6880d;
+  width: 400px;
+  height: 300px;
+  z-index: 10;
+  pointer-events: none;
+  border-radius: 20px 50px 110px 230px;
+  filter: blur(150px);
+  opacity: 0.6;
+}
+.carousel .list .item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel .list .item:nth-child(1) .main-content {
+  background: linear-gradient(
+    to left,
+    #fffacd,
+    #ffdead,
+    #fde98a,
+    #ffd598,
+    #ffcba4,
+    #ffefd5,
+    #fff5c9
+  );
+}
+.carousel .list .item:nth-child(2) .main-content {
+  background: linear-gradient(
+    -210deg,
+    #fffca3,
+    #fffca8,
+    #d7ffc2,
+    #dbffc7,
+    #fbffcd,
+    #fffcad,
+    #ffd6a5 70%,
+    #ffd6a7 75%,
+    #fde6bf,
+    #fde4ba
+  );
+}
+.carousel .list .item:nth-child(3) .main-content {
+  background: conic-gradient(
+    at 75% 65%,
+    #ffffff,
+    #fafad2,
+    #fff8dc,
+    #f5f5dc,
+    #f0fff0,
+    #ffe4b5,
+    #ffebcd,
+    #ffffff
+  );
+}
+.carousel .list .item:nth-child(4) .main-content {
+  background: linear-gradient(
+    -45deg,
+    #ffffff,
+    #fff8dc,
+    #f5f5dc,
+    #c8e8c7,
+    #ffe4b5,
+    #ffebcd
+  );
+}
+
+.carousel .list .item .image {
+  width: var(--w-image);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: calc(100% - calc(var(--w-image) * var(--calculate)));
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  font-weight: 500;
+}
+.carousel .list .item .image img {
+  width: 90%;
+  height: 55%;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 150px 50px #9e0c0c55);
+}
+.carousel .list .item .image figcaption {
+  font-family: "Aboreto";
+  font-weight: bold;
+  font-size: 1.3em;
+  text-align: center;
+  margin-bottom: 100px;
+  width: 70%;
+}
+.carousel .list .item .main-content {
+  height: 100%;
+  display: grid;
+  grid-template-columns: calc(100% - calc(var(--w-image) * var(--calculate)));
+}
+.carousel .list .item .main-content .content {
+  padding: 150px 20px 20px 80px;
+}
+.carousel .list .item .main-content .content h2 {
+  font-size: 4em;
+  font-family: "Satisfy", cursive;
+}
+.carousel .list .item .main-content .content h2 {
+  background: linear-gradient(45deg, #e67e22, #ffdd57, #ee9a4d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.carousel .list .item .main-content .content .price,
+.carousel .list .item .main-content .content .description {
+  color: #333;
+}
+
+.carousel .list .item .main-content .content .price {
+  font-family: "Aboreto";
+  font-size: 3em;
+  margin: 20px 0;
+}
+
+.carousel .list .item .main-content .content .hero-btn {
+  margin: 20px 0;
+  padding: 10px 16px;
+  font-size: 16px;
+}
+
+.carousel .list .item {
+  display: none;
+}
+.carousel .list .item.active,
+.carousel .list .item.other_1,
+.carousel .list .item.other_2 {
+  display: block;
+}
+.carousel .list .item.active {
+  z-index: 2;
+}
+.carousel .list .item.other_1,
+.carousel .list .item.other_2 {
+  pointer-events: none;
+}
+.carousel .list .item.active .main-content {
+  animation: showContent 1s ease-in-out 1 forwards;
+}
+@keyframes showContent {
+  from {
+    clip-path: circle(0% at 70% 50%);
+  }
+  to {
+    clip-path: circle(100% at 70% 50%);
+  }
+}
+.next .item.other_1 {
+  z-index: 1;
+}
+.next .item .image img,
+.next .item .image figcaption {
+  animation: effectNext 0.5s ease-in-out 1 forwards;
+}
+@keyframes effectNext {
+  from {
+    transform: translateX(calc(var(--transform-from)));
+  }
+  to {
+    transform: translateX(calc(var(--transform-from) - var(--w-image)));
+  }
+}
+.next .item.active .image {
+  --transform-from: var(--w-image);
+}
+.next .item.other_1 .image {
+  z-index: 3;
+  --transform-from: 0px;
+  overflow: hidden;
+}
+.next .item.other_2 .image {
+  z-index: 3;
+  --transform-from: calc(var(--w-image) * 2);
+}
+.arrows {
+  z-index: 10;
+}
+
+.prev .list .item .image img,
+.prev .list .item .image figcaption {
+  animation: effectPrev 0.5s ease-in-out 1 forwards;
+}
+@keyframes effectPrev {
+  from {
+    transform: translateX(calc(var(--transform-from)));
+  }
+  to {
+    transform: translateX(calc(var(--transform-from) + var(--w-image)));
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  :root {
+    --calculate: 1;
+    --w-image: 400px;
+  }
+  .carousel .list .item .main-content .content h2 {
+    font-size: 3em;
+  }
+
+  .carousel .list .item .image img {
+    width: 90%;
+    height: 50%;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 150px 50px #9e0c0c55);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .carousel .list .item .image {
+    display: block;
+    margin: 350px 170px;
+  }
+
+  .carousel .list .item .image img {
+    width: 45%;
+    height: auto !important;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 150px 50px #9e0c0c55);
+  }
+
+  .next .item .image figcaption {
+    display: none;
+  }
+  .carousel .list .item:nth-child(3) .main-content {
+    background: conic-gradient(
+      at 83% 68%,
+      #ffffff,
+      #fafad2,
+      #fff8dc,
+      #f5f5dc,
+      #f0fff0,
+      #ffe4b5,
+      #ffebcd,
+      #ffffff
+    );
+  }
+
+  .carousel .list .item .main-content {
+    grid-template-columns: 100% !important;
+  }
+
+  .carousel .list .item .main-content .content {
+    display: block;
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+  }
+
+  .carousel .list .item .main-content .content h2 {
+    font-size: 2.5em;
+  }
+
+  .carousel .list .item .main-content .content .price {
+    font-size: 2em;
+    margin: 0;
+  }
+
+  .carousel .list .item .main-content .content .description {
+    margin-bottom: 20px;
+  }
+
+  .carousel .list::before,
+  .carousel .list::after {
+    display: none;
+  }
+
+  .dots {
+    width: 100%;
+    position: absolute;
+    left: 30%;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+/* @media screen and (max-width: 400px) {
+  .carousel .list .item .main-content .content h2 {
+    font-size: 2em;
+  }
+
+  .carousel .list .item .main-content .content .price {
+    font-size: 1.5em;
+  }
+
+  .carousel .list .item .main-content .content {
+    padding: 80px 15px 15px 15px;
+  }
+
+  .dot {
+    position: absolute;
+    bottom: 20px;
+    left: 32%;
+    width: calc(100% - calc(var(--w-image) * var(--calculate)));
+    display: flex;
+    gap: 20px;
+  }
+} */
+
+@media screen and (max-width: 400px) {
+  .carousel .list .item .main-content .content h2 {
+    font-size: 2em;
+  }
+
+  .carousel .list .item .main-content .content .price {
+    font-size: 1.5em;
+  }
+
+  .carousel .list .item .main-content .content {
+    padding: 80px 15px 15px 15px;
+  }
+
+  /* Fix the dots positioning */
+  .dots {
+    width: 100%;
+    padding: 0px 20px;
+    justify-content: center;
+    left: 0;
+  }
+  
+  /* Remove the problematic dot rule */
+  .dot {
+    position: static !important;
+    width: auto !important;
+    display: inline-block !important;
+  }
+}
+
+
+.dots {
+  position: absolute;
+  bottom: 20px;
+  width: calc(100% - calc(var(--w-image) * var(--calculate)));
+  display: flex;
+  padding: 0px 60px;
+  gap: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0 10px 40px #5555;
+  transition: 0.5s ease-in-out;
+  z-index: 99;
+}
+
+.dot:active {
+  transform: scale(0.9);
+}
+
+.dot:hover {
+  background: #b2b2b2;
+}
+
+.dot.active-dot {
+  background: #3f3f3f;
+  transform: scale(1.3);
+}
+
