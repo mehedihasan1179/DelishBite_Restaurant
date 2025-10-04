@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // Assuming you save the CSS in a file named Navbar.css and import it
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
   // State to manage the mobile menu's open/close status
