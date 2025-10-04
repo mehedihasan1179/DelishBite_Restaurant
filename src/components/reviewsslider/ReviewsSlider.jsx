@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import './ReviewsSlider.css';
+import './reviewsslider.css';
 
 const AUTOPLAY_INTERVAL = 5000;
 
