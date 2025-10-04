@@ -3,7 +3,7 @@ import Navbar from './components/navbar/Navbar';
 import FoodCarousel from './components/foodcarousel/FoodCarousel';
 import AboutSection from './components/aboutsection/AboutSection';
 import './App.css'
-import MenuSection from './components/MenuSection/MenuSection';
+import MenuSection from './components/menusection/MenuSection';
 import ServicesSection from './components/servicessection/ServicesSection';
 import ReviewsSlider from './components/reviewsslider/ReviewsSlider';
 import BlogSection from './components/blogsection/BlogSection';
