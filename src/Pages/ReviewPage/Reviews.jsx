@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./reviews.css";
-import QuotoSlider from "../../Component/QuotoSlider/quotoSilder";
+import QuotoSlider from "../../Component/QuotoSlider/QuotoSilder";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
