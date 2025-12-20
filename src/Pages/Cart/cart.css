@@ -1,0 +1,120 @@
+/* cart.css */
+.cart-section table {
+  min-width: 700px; /* Accommodate Image column */
+}
+
+.cart-section th,
+.cart-section td {
+  text-align: center; /* Center text as per your updated Cart.jsx */
+  padding: 0.5rem 1rem;
+}
+
+/* Default odd and even row colors */
+table tr:nth-child(even) {
+  background-color: #ffe8d4;
+}
+
+table tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+/* Hover effect only on even rows */
+table tr:nth-child(even):hover {
+  background-color: #fce0c6;
+}
+
+
+/* Slide-up animation for increasing quantity */
+@keyframes slide-up {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Slide-down animation for decreasing quantity */
+@keyframes slide-down {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slide-up 0.4s ease-in-out;
+}
+
+.slide-down {
+  animation: slide-down 0.4s ease-in-out;
+}
+
+
+/* .cart-section .order-summary {
+  background-color: #fff;
+  border: 1px solid #ffd2ad;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-section .form-group {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.cart-section .field-label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  font-weight: 400;
+  color: #696363;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 20px;
+  padding: 0 20px;
+  transition: all 0.4s ease;
+  z-index: 9;
+}
+
+.cart-section .input-group {
+  width: 90%;
+  padding: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 20px;
+  padding-right: 30px;
+}
+
+.cart-section .input-group:focus {
+  border-color: #f39c12;
+  outline: none;
+}
+
+.cart-section .input-group:focus ~ .field-label,
+.cart-section .input-group.active ~ .field-label {
+  background: #e67e22;
+  color: #f7f7f7;
+  border-radius: 5px;
+  top: 0;
+  left: 20px;
+  font-size: 14px;
+  padding: 4px 8px;
+  letter-spacing: 1px;
+} */

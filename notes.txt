@@ -1,0 +1,8 @@
+!full blog pages
+sidebar-recent post, newsletter
+comments
+description, additional information, review
+
+
+
+**max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2

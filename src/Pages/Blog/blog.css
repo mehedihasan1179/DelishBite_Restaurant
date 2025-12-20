@@ -1,0 +1,168 @@
+.blog-header h2 {
+  transition: transform 0.4s ease;
+  color: var(--primary-dark);
+  font-family: satisfy;
+}
+
+.blog-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-dark); 
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+}
+
+.blog-header h2:hover {
+  transform: scale(1.05);
+}
+
+.blog-header h2:hover::after {
+  transform: scaleX(1);
+}
+
+.secondary-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ff9100 !important;
+  border: 2px solid #f5930b;
+  outline: 0;
+  background: transparent;
+  display: block;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease 0s;
+  z-index: 1;
+}
+
+.secondary-btn::before,
+.secondary-btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #eb8c07;
+  top: 0;
+  left: -100%;
+  transition: 0.4s;
+  z-index: -1;
+}
+
+.secondary-btn:hover {
+  color: #fff !important;
+  transition: color 0.3s ease 0s;
+}
+
+.secondary-btn::before {
+  opacity: 0.7;
+  transition: left 0.4s ease;
+}
+
+.secondary-btn::after {
+  transition-delay: 0.2s;
+}
+
+.secondary-btn:hover::before {
+  left: 0;
+  transition: left 0.4s ease 0s;
+}
+
+.secondary-btn:hover::after {
+  left: 0;
+}
+
+.secondary-btn.active {
+  background: #eb8c07;
+  color: #fff !important;
+  transition: none;
+}
+
+/* --- Card Transition Overrides (Hover Reveal) --- */
+
+.blog-card-image {
+  transition: all 0.5s ease;
+}
+
+.blog-card:hover .blog-card-image {
+  transform: scale(1.05);
+}
+
+.blog-card-bottom {
+  transition: background 0.5s ease, backdrop-filter 0.5s ease;
+}
+.blog-card:hover .blog-card-bottom {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.blog-card-bottom .title {
+  transition: margin-bottom 0.4s ease;
+}
+.blog-card:hover .title {
+  margin-bottom: 15px;
+}
+
+.description-text {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+  margin-top: 0;
+}
+.blog-card:hover .description-text {
+  max-height: 120px;
+  opacity: 1;
+  margin-top: 15px;
+  overflow-y: auto;
+}
+
+.buttons {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.blog-card:hover .buttons {
+  max-height: 60px;
+  opacity: 1;
+  margin-top: 20px;
+}
+
+.description-text::-webkit-scrollbar {
+  width: 5px;
+}
+
+.description-text::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+/* --- Favorite Icon Bounce Animation --- */
+@keyframes bounce {
+  0% { transform: scale(0.5); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.blog-fav-icon.animated {
+  color: #e74c3c !important; /* Override Tailwind color */
+  animation: bounce 0.5s ease-in-out;
+}
+
+/* --- Read More Chevron Animation --- */
+@keyframes slide-right {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+.secondary-btn:hover .animated-chevron {
+  display: inline-block;
+  animation: slide-right 1s ease-in-out 0.5s infinite;
+}

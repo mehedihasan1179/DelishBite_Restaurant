@@ -1,0 +1,31 @@
+/* Slide-up animation for increasing quantity */
+@keyframes slide-up {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Slide-down animation for decreasing quantity */
+@keyframes slide-down {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slide-up 0.4s ease-in-out;
+}
+
+.slide-down {
+  animation: slide-down 0.4s ease-in-out;
+}

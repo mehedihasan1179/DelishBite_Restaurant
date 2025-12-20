@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  /* Primary Colors */
+  --primary: #f39c12;
+  --primary-dark: #fa8b2a;
+  --primary-light: #f8c471;
+  
+
+  /* logo color */
+  --logo-color: #f4711a;
+  --primary-hover: #ffd3b6;
+  
+  /* Accent Colors */
+  --accent: #e74c3c;
+  --accent-light: #ec7063;
+
+  /* button Colors */
+  --primary-btn: #ee9a4d;
+
+  /* Text Colors */
+  --text-white: #ffffff;
+
+   /* Primary-related Text Colors */
+  --text-primary-orange: #f39c12;        /* Direct primary */
+  /* --text-primary-dark: #d35400;          Darker orange for better contrast */
+  --text-primary-dark: #f07d19;         /* Dark orange */
+  --text-primary-light: #f8c471;         /* Light orange */
+  --text-primary-muted: #e67e22;         /* Muted orange */
+  
+  /* Background Colors */
+  --bg-light: #f8f9f9;
+  --bg-white: #ffffff;
+  
+  /* Hover States */
+  --hover-primary: #e4700c;
+  --hover-secondary: #34495e;
+  --hover-accent: #c0392b;
+
+  /* carousel */
+  --border-color: #fff5;
+  --w-image: 500px;
+  --calculate: calc(3 / 2);
+}
+
+
+
+/* You can add global styles here */
+html, body, #root { height: 100%; }
+
+#body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#body::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, #ffc21a),
+									   color-stop(0.72, #fdc91f),
+									   color-stop(0.86, #f3d112));
+  border-radius: 20px;
+}
+
+.thin-scrollbar::-webkit-scrollbar {
+  width: 4px; /* Default is 16px, so 8px is 4px thinner on each side */
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: #f7812d;
+  border-radius: 4px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #cf5d0c;
+}
+
+
+
+@layer utilities {
+  .cursor-zoom-in {
+    cursor: zoom-in;
+  }
+  
+  .cursor-zoom-out {
+    cursor: zoom-out;
+  }
+  
+  body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+}
+
+.toastBody {
+  background-color: var(--primary-light);
+}

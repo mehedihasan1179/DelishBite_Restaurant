@@ -1,0 +1,88 @@
+/* Modal Animation */
+@keyframes zoom {
+  from { 
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to { 
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-zoom {
+  animation: zoom 0.3s ease-out;
+}
+
+/* Scroll Animations */
+.text-view {
+  animation: scrolltext both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 80vh;
+}
+
+@keyframes scrolltext {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lazy-loading {
+  animation: glitch-effect both;
+  animation-timeline: view(2% 5%);
+  animation-range: entry 10% cover 40%;
+}
+
+@keyframes glitch-effect {
+  from {
+    filter: blur(3px) brightness(200%) contrast(500%) saturate(80%);
+    opacity: 0;
+    scale: 0.5;
+    translate: 0 20px;
+  } to {
+    filter: none;
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 640px) {
+  .about-images {
+    min-height: 350px !important;
+  }
+  
+  .image-container {
+    min-height: 160px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-images {
+    min-height: 300px !important;
+    gap: 2px;
+  }
+  
+  .image-container {
+    min-height: 140px !important;
+  }
+  
+  .custom-h2::after {
+    bottom: 4px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .about-images {
+    min-height: 250px !important;
+  }
+  
+  .image-container {
+    min-height: 120px !important;
+  }
+}

@@ -1,0 +1,67 @@
+/*
+  These styles are required for the complex stroke/fill effect on the logo.
+  They use non-standard properties like -webkit-text-stroke and background-clip.
+*/
+
+/* Existing styles remain unchanged */
+
+/* Cart Modal Styles */
+#cartModal {
+  width: 350px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#cartModal {
+  transition: opacity 0.5s ease-in-out;
+}
+#cartModal.hidden {
+  opacity: 0;
+}
+
+#cartModal .flex-1 {
+  max-height: 400px; /* Adjust based on header and footer height */
+  overflow-y: auto;
+}
+
+#cartModal img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+#cartModal .border-b {
+  border-bottom: 1px solid #ffb67a;
+}
+
+#cartModal button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#cartModal .bg-gray-800 {
+  background-color: var(--secondary-dark, #1f2937);
+}
+
+/* Thin scrollbar */
+.thin-scrollbar::-webkit-scrollbar {
+  width: 4px; /* Default is 16px, so 8px is 4px thinner on each side */
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: #f7812d;
+  border-radius: 4px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #cf5d0c;
+}

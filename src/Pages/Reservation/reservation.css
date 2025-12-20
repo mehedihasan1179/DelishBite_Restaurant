@@ -1,0 +1,190 @@
+/* .reservation-section h2:hover .h2-underline {
+  transform: scaleX(1);
+}
+
+.form-group .field-label {
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  font-weight: 400;
+  color: #696363 !important;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 20px;
+  padding: 0 20px;
+  transition: 0.4s ease-in;
+  z-index: 9;
+}
+
+.form-group input:focus ~ .field-label,
+.form-group input.active ~ .field-label,
+.form-group select:focus ~ .field-label,
+.form-group select.active ~ .field-label,
+.form-group textarea:focus ~ .field-label,
+.form-group textarea.active ~ .field-label {
+  display: block;
+  background: var(--hover-primary, #e67e22);
+  color: #f7f7f7 !important;
+  border-radius: 5px;
+  top: 0px;
+  left: 20px;
+  font-size: 14px;
+  padding: 4px 8px;
+  letter-spacing: 1px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.form-group input:focus,
+.form-group input.active {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+
+.form-group input[type="date"],
+.form-group input[type="time"] {
+  color: transparent;
+}
+
+.form-group input[type="date"].has-value,
+.form-group input[type="time"].has-value,
+.form-group input[type="date"]:focus,
+.form-group input[type="time"]:focus {
+  color: #111;
+}
+
+
+
+.people-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 20px;
+  padding-right: 40px !important;
+  cursor: pointer;
+}
+
+.error-message {
+  color: var(--accent, #e74c3c); 
+}
+
+@media (max-width: 992px) {
+  .form-group-row > .form-group .error-message {
+    bottom: -35px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-group-row > .form-group .error-message {
+    bottom: -25px !important;
+  }
+} */
+
+
+
+
+
+
+/* reservation.css */
+/* @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+
+.reservation-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-dark);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+}
+
+.reservation-title:hover::after {
+  transform: scaleX(1);
+}
+
+.form-group input:focus ~ span,
+.form-group input.active ~ span,
+.form-group select:focus ~ span,
+.form-group select.active ~ span {
+  display: block;
+  background: #e67e22;
+  color: #f7f7f7 !important;
+  border-radius: 5px;
+  top: 0px;
+  left: 20px;
+  font-size: 14px;
+  padding: 4px 8px;
+  letter-spacing: 1px;
+}
+
+.form-group input[type="email"]:focus ~ span,
+.form-group input[type="email"].has-text ~ span {
+  background: #e67e22;
+  color: #f7f7f7;
+  border-radius: 5px;
+  top: 0px;
+  left: 20px;
+  font-size: 14px;
+  padding: 4px 8px;
+  letter-spacing: 1px;
+}
+
+
+.form-group input[type="date"]:focus,
+.form-group input[type="date"].has-value,
+.form-group input[type="time"]:focus,
+.form-group input[type="time"].has-value {
+  color: #111;
+}
+
+
+#people {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+
+@media (max-width: 992px) {
+  .reservation-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .left-form,
+  .right-video {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .form-group-third .error-message {
+    bottom: -50px;
+  }
+  
+  .form-group .form-group-third > .error-message {
+    bottom: -35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-group-third > .error-message {
+    bottom: -25px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-group-row {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    margin: 4rem 0 2.5rem 0;
+  }
+} */

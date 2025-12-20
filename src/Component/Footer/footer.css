@@ -1,0 +1,39 @@
+.form-group input {
+  padding: 12px 16px; 
+}
+
+.field-label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  color: #7f8c8d;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-size: 14px; 
+  z-index: 5;
+}
+
+.newsletter-form .form-group input[type="email"]:focus ~ span,
+.newsletter-form .form-group input[type="email"].has-text ~ span {
+  background: var(--hover-primary, #e67e22);
+  color: #f7f7f7;
+  border-radius: 5px;
+  top: 0px; 
+  left: 10px;
+  font-size: 14px;
+  padding: 2px 8px;
+  letter-spacing: 0.5px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.newsletter-form .form-group input[type="email"]:focus,
+.newsletter-form .form-group input[type="email"].has-text {
+  padding-top: 18px;
+  padding-bottom: 6px;
+}
+
+.message-error {
+  color: var(--accent, #e74c3c); 
+}

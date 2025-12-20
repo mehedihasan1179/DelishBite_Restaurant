@@ -1,0 +1,59 @@
+.reviews-slider {
+  transition: transform 0.5s ease; 
+}
+
+.slide {
+  transition: all 0.4s ease;
+  opacity: 0.7;
+  transform: scale(0.9);
+  flex-basis: 300px;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1.05);
+  z-index: 10;
+  border: 3px dashed #f0ab52;
+  flex-basis: 350px; 
+}
+
+/* reviews.css */
+
+/* 1. Define the Keyframe Animation */
+@keyframes indicator-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.indicator-active-container {
+  position: relative;
+}
+
+.indicator-active-container::before {
+  animation: indicator-progress 5s linear forwards;
+}
+
+.indicator-fill-primary::before {
+  background-color: var(--text-primary-dark, #2c3e50); 
+}
+
+@media (max-width: 768px) {
+  .slide {
+    flex-basis: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .slide {
+    flex-basis: 220px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .slide.active {
+    flex-basis: 90%; 
+  }
+}
