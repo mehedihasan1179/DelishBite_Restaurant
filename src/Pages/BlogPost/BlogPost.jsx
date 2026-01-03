@@ -285,10 +285,11 @@ const BlogPost = () => {
                   </p>
                 )}
               </div>
-
-              <SecondaryBtn type="submit" className="w-full md:w-auto">
-                Post Comment
-              </SecondaryBtn>
+              <div class="flex justify-center w-full">
+                <SecondaryBtn type="submit" className="w-full md:w-auto">
+                  Post Comment
+                </SecondaryBtn>
+              </div>
             </form>
 
             {/* Display Comments - Right side of the left column */}
