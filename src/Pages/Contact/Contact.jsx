@@ -299,7 +299,7 @@ const Contact = () => {
                   className="mt-1 text-xl lg:text-3xl"
                 />
                 <div>
-                  <p className="font-bold text-lg md:text-3xl">Email</p>
+                  <p className="font-bold text-lg md:text-2xl">Email</p>
                   <p className="text-black">info@delishbite.com</p>
                 </div>
               </div>
