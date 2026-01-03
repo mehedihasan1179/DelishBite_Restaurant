@@ -245,12 +245,14 @@ const Contact = () => {
                 )}
               </div>
 
-              <PrimaryBtn
+              <div class="flex justify-center w-full">
+                <PrimaryBtn
                 className="w-full flex justify-center md:w-auto"
                 type="submit"
               >
                 Send Message
               </PrimaryBtn>
+              </div> 
             </form>
           </div>
 
