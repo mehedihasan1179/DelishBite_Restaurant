@@ -77,7 +77,7 @@ const MenuItemDetails = () => {
       window.removeFromCart(item.name);
       setShowCounter(false);
       setQuantity(1);
-      toast.error(`${itemName} removed from cart!`, {
+      toast.error(`${item.name} removed from cart!`, {
       position: "bottom-right",
       autoClose: 2000,
       hideProgressBar: false,
@@ -138,7 +138,7 @@ const MenuItemDetails = () => {
       setAnimationStates("");
     }, 300);
     // toast.success(`${item.name} added to cart!`);
-    toast.success(`${itemName} removed from cart!`, {
+    toast.success(`${item.name} added to cart!`, {
       position: "bottom-right",
       autoClose: 2000,
       hideProgressBar: false,
