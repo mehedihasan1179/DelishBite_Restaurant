@@ -10,7 +10,7 @@ import {
 import { mockMenuData } from "../../data/mockMenuData";
 import "./cart.css";
 import PrimaryBtn from "../../Component/Buttons/PrimaryBtn/PrimaryBtn";
-import { toast } from "react-toastify";
+import { ToastContainer, toast, Flip } from "react-toastify";
 import { Link } from "react-router-dom";
 import Address from "../Address/Address";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
@@ -39,8 +39,8 @@ const Cart = ({ cartItems, setCartItems }) => {
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
-      transition: Slide,
       draggable: true,
+      transition: Flip,
     });
   };
 
@@ -108,7 +108,7 @@ const Cart = ({ cartItems, setCartItems }) => {
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
-        transition: Slide,
+        transition: Flip,
         draggable: true,
       });
     } else {
@@ -124,7 +124,7 @@ const Cart = ({ cartItems, setCartItems }) => {
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
-          transition: Slide,
+          transition: Flip,
           draggable: true,
         }
       );
@@ -172,7 +172,7 @@ const Cart = ({ cartItems, setCartItems }) => {
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
-        transition: Slide,
+        transition: Flip,
         draggable: true,
       });
       return;
@@ -183,7 +183,7 @@ const Cart = ({ cartItems, setCartItems }) => {
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
-      transition: Slide,
+      transition: Flip,
       draggable: true,
     });
     console.log("Proceed to Checkout", {
