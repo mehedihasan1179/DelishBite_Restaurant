@@ -5,7 +5,7 @@ import { mockMenuData } from "../../data/mockMenuData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import PrimaryBtn from "../../Component/Buttons/PrimaryBtn/PrimaryBtn";
-import { toast } from "react-toastify";
+import { ToastContainer, toast, Flip } from "react-toastify";
 
 const MenuItemDetails = () => {
   const [animationStates, setAnimationStates] = useState("");
@@ -77,7 +77,15 @@ const MenuItemDetails = () => {
       window.removeFromCart(item.name);
       setShowCounter(false);
       setQuantity(1);
-      toast.info(`${item.name} removed from cart`);
+      toast.error(`${itemName} removed from cart!`, {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      transition: Flip,
+      draggable: true,
+    });
       return;
     }
 
