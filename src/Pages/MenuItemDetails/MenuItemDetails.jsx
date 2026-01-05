@@ -137,7 +137,16 @@ const MenuItemDetails = () => {
     setTimeout(() => {
       setAnimationStates("");
     }, 300);
-    toast.success(`${item.name} added to cart!`);
+    // toast.success(`${item.name} added to cart!`);
+    toast.success(`${itemName} removed from cart!`, {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      transition: Flip,
+      draggable: true,
+    });
   };
 
   return (
