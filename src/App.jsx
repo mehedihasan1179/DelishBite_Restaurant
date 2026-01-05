@@ -65,7 +65,7 @@ export default function App() {
           theme="light"
           bodyClassName="toastBody"
           toastStyle={{
-          fontSize: "1.2rem",
+          fontSize: "0.75rem",
           color: "var(--primary-dark)",
           background: "#ffd2ad",
         }}
