@@ -39,7 +39,7 @@ const Cart = ({ cartItems, setCartItems }) => {
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
-      transition={Slide},
+      transition: Slide,
       draggable: true,
     });
   };
@@ -108,7 +108,7 @@ const Cart = ({ cartItems, setCartItems }) => {
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
-        transition={Slide},
+        transition: Slide,
         draggable: true,
       });
     } else {
@@ -124,7 +124,7 @@ const Cart = ({ cartItems, setCartItems }) => {
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
-          transition={Slide},
+          transition: Slide,
           draggable: true,
         }
       );
@@ -172,7 +172,7 @@ const Cart = ({ cartItems, setCartItems }) => {
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
-        transition={Slide},
+        transition: Slide,
         draggable: true,
       });
       return;
@@ -183,7 +183,7 @@ const Cart = ({ cartItems, setCartItems }) => {
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
-      transition={Slide},
+      transition: Slide,
       draggable: true,
     });
     console.log("Proceed to Checkout", {
