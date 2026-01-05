@@ -33,12 +33,13 @@ const Cart = ({ cartItems, setCartItems }) => {
   // Function to remove an item from the cart
   const removeFromCart = (itemName) => {
     setCartItems(cartItems.filter((item) => item.name !== itemName));
-    toast.success(`${itemName} removed from cart!`, {
+    toast.error(`${itemName} removed from cart!`, {
       position: "bottom-right",
       autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
+      transition={Slide},
       draggable: true,
     });
   };
