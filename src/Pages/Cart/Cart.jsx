@@ -107,6 +107,7 @@ const Cart = ({ cartItems, setCartItems }) => {
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
+        transition={Slide},
         draggable: true,
       });
     } else {
@@ -122,6 +123,7 @@ const Cart = ({ cartItems, setCartItems }) => {
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
+          transition={Slide},
           draggable: true,
         }
       );
@@ -169,6 +171,7 @@ const Cart = ({ cartItems, setCartItems }) => {
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
+        transition={Slide},
         draggable: true,
       });
       return;
@@ -179,6 +182,7 @@ const Cart = ({ cartItems, setCartItems }) => {
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
+      transition={Slide},
       draggable: true,
     });
     console.log("Proceed to Checkout", {
@@ -234,7 +238,7 @@ const Cart = ({ cartItems, setCartItems }) => {
               autoplay
               className="-mt-20"
             />
-            <p className="text-center mt-10 text-primary-dark text-2xl">Your empty cart is ready for a culinary adventure.</p>
+            <p className="text-center mt-10 text-primary-dark text-2xl">Don't leave your tastebuds hanging—start your savory quest.</p>
           </>
         ) : (
           <div className="overflow-x-auto">
