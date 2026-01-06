@@ -39,7 +39,7 @@ export default function Help() {
               className="mt-1 text-xl lg:text-3xl"
             /> How to Order
           </h2> */}
-          <div >
+          <div className="flex gap-1">
             <FontAwesomeIcon
               icon={faMobile}
               className="mt-1 text-xl lg:text-3xl"
@@ -72,7 +72,7 @@ export default function Help() {
         </section>
 
         <section className="rounded-lg  p-2 sm:p-8 mb-6">
-          <div >
+          <div className="flex gap-1">
             <FontAwesomeIcon
               icon={faTruck}
               className="mt-1 text-xl lg:text-3xl"
@@ -96,7 +96,7 @@ export default function Help() {
         </section>
 
         <section className="rounded-lg  p-2 mb-6">
-          <div >
+          <div className="flex gap-1">
             <FontAwesomeIcon
               icon={faCreditCard}
               className="mt-1 text-xl lg:text-3xl"
