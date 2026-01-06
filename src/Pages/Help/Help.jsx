@@ -77,7 +77,7 @@ export default function Help() {
               icon={faTruck}
               className="mt-1 text-xl lg:text-3xl"
             />
-            <h2 className="text-primary-dark text-2xl font-bold text-gray-800 mb-4">How to Order</h2>
+            <h2 className="text-primary-dark text-2xl font-bold text-gray-800 mb-4">Delivery & Pickup</h2>
           </div>
           <p className="text-gray-600 leading-relaxed space-y-2">
             <div>
@@ -101,7 +101,7 @@ export default function Help() {
               icon={faCreditCard}
               className="mt-1 text-xl lg:text-3xl"
             />
-            <h2 className="text-primary-dark text-2xl font-bold text-gray-800 mb-4">How to Order</h2>
+            <h2 className="text-primary-dark text-2xl font-bold text-gray-800 mb-4">Payment Methods</h2>
           </div>
           <p className="text-gray-600">
             We accept credit cards, debit cards, digital wallets, and cash on
