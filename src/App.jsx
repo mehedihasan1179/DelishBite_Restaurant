@@ -20,6 +20,7 @@ import Help from "./Pages/Help/Help";
 import BlogSlider from "./Pages/BlogSlider/BlogSlider";
 import Contact from "./Pages/Contact/Contact";
 import MenuItemDetails from "./Pages/MenuItemDetails/MenuItemDetails";
+import ScrollToTop from "./Component/ScrollToTop/ScrollToTop";
 
 export default function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -28,6 +29,7 @@ export default function App() {
   return (
     <div>
       <Router>
+        <ScrollToTop />
         <Navbar cartItems={cartItems} setCartItems={setCartItems} />
         <Routes>
           <Route path="/" element={<Home />} />
