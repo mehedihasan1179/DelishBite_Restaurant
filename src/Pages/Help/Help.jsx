@@ -95,7 +95,7 @@ export default function Help() {
           </p>
         </section>
 
-        <section className="rounded-lg  p-2 mb-6">
+        <section className="rounded-lg p-2 sm:p-8 mb-6">
           <div className="flex gap-1">
             <FontAwesomeIcon
               icon={faCreditCard}
@@ -109,7 +109,7 @@ export default function Help() {
           </p>
         </section>
 
-        <section className=" p-2">
+        <section className="rounded-lg p-2 sm:p-8 mb-6">
          <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <FontAwesomeIcon
