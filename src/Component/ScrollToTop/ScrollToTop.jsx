@@ -5,9 +5,12 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Instantly scroll to the top of the window
-    window.scrollTo(0, 0);
-  }, [pathname]); // Runs every time the path changes
+    // window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [pathname]);
 
   return null;
 };
