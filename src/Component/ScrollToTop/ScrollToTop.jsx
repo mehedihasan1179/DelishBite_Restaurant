@@ -16,3 +16,15 @@ const ScrollToTop = () => {
 };
 
 export default ScrollToTop;
+
+
+
+// Inside App.jsx
+// useEffect(() => {
+//   localStorage.setItem('cart', JSON.stringify(cartItems));
+// }, [cartItems]);
+
+// // When initializing state
+// const [cartItems, setCartItems] = useState(
+//   JSON.parse(localStorage.getItem('cart')) || []
+// );
