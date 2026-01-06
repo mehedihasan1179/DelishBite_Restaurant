@@ -5,6 +5,9 @@ import {
   faPhone,
   faEnvelope,
   faMapMarkerAlt,
+  faMobile,
+  faTruck,
+  faCreditCard
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Help() {
@@ -29,9 +32,21 @@ export default function Help() {
         </section>
 
         <section className="rounded-lg  p-2 sm:p-8 mb-6">
-          <h2 className="text-primary-dark text-2xl font-bold text-gray-800 mb-4">
-            📱 How to Order
-          </h2>
+          
+          {/* <h2 className="text-primary-dark text-2xl font-bold text-gray-800 mb-4">
+            <FontAwesomeIcon
+              icon={faMobile}
+              className="mt-1 text-xl lg:text-3xl"
+            /> How to Order
+          </h2> */}
+          <div >
+            <FontAwesomeIcon
+              icon={faMobile}
+              className="mt-1 text-xl lg:text-3xl"
+            />
+            <h2 className="text-primary-dark text-2xl font-bold text-gray-800 mb-4">How to Order</h2>
+          </div>
+          
           <ul className="space-y-3 text-gray-600">
             <li className="flex items-start">
               <span className="text-orange-500 mr-3">•</span>
@@ -57,9 +72,13 @@ export default function Help() {
         </section>
 
         <section className="rounded-lg  p-2 sm:p-8 mb-6">
-          <h2 className="text-primary-dark text-2xl font-bold text-gray-800 mb-4">
-            🚚 Delivery & Pickup
-          </h2>
+          <div >
+            <FontAwesomeIcon
+              icon={faTruck}
+              className="mt-1 text-xl lg:text-3xl"
+            />
+            <h2 className="text-primary-dark text-2xl font-bold text-gray-800 mb-4">How to Order</h2>
+          </div>
           <p className="text-gray-600 leading-relaxed space-y-2">
             <div>
               <strong>Delivery:</strong> Available within 5km. Estimated time:
@@ -77,9 +96,13 @@ export default function Help() {
         </section>
 
         <section className="rounded-lg  p-2 mb-6">
-          <h2 className="text-primary-dark text-2xl font-bold text-gray-800 mb-4">
-            💳 Payment Methods
-          </h2>
+          <div >
+            <FontAwesomeIcon
+              icon={faCreditCard}
+              className="mt-1 text-xl lg:text-3xl"
+            />
+            <h2 className="text-primary-dark text-2xl font-bold text-gray-800 mb-4">How to Order</h2>
+          </div>
           <p className="text-gray-600">
             We accept credit cards, debit cards, digital wallets, and cash on
             delivery.
