@@ -272,7 +272,8 @@ const Navbar = ({ cartItems, setCartItems }) => {
 
         <div
           id="hamburger"
-          className="cursor-pointer h-9 w-9 rounded-full flex text-primary-dark text-center bg-orange-500 md:hidden justify-center items-center active:scale-90 transition-transform duration-100 z-50"
+          {/* className="cursor-pointer h-9 w-9 rounded-full flex text-primary-dark text-center bg-orange-500 md:hidden justify-center items-center active:scale-90 transition-transform duration-100 z-50" */}
+          className={`cursor-pointer h-9 w-9 rounded-full flex text-white text-center bg-orange-500 md:hidden justify-center items-center active:scale-90 transition-all duration-100 z-50 border-none outline-none`}
           onClick={toggleMenu}
         >
           <span id="hamburger-icon" className="text-xl leading-none">
