@@ -28,3 +28,9 @@ export default ScrollToTop;
 // const [cartItems, setCartItems] = useState(
 //   JSON.parse(localStorage.getItem('cart')) || []
 // );
+
+//inside footer
+// const handleReload = () => {
+//     // This force-reloads the window to the new URL
+//     window.location.href = to;
+// };
